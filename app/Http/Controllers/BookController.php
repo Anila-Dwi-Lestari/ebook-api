@@ -139,4 +139,7 @@ class BookController extends Controller
             ], 404);
         }
     }
+    public function search($title){
+        return Book::where('title', 'like', '%'.$title.'%')->get();
+    }
 }
